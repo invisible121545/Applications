@@ -35,19 +35,7 @@ def checkSign(request):
 	 	return render(request,'signin.html',{'message':'Wrong Email or password'})
 	else:
 		return HttpResponseRedirect(reverse('Yoins:product_list'))	
-
-# def checkSign(request):
-# 	try:
-# 		str = request.POST['admin_pass'].encode('utf-8')
-# 		psw = hashlib.md5(str).hexdigest();
-# 		print (request.POST['username'])
-# 		Admin.objects.get(admin_name=request.POST['username'],admin_pass=psw)
-# 	except (KeyError, Admin.DoesNotExist):
-# 	 	return HttpResponse({'message':False})
-# 	else:
-# 		return HttpResponse({'message':True})
-
-
+		
 def ckeckSignName(request):
 	# try:
 	user = Admin.objects.get(admin_name=request.POST['username'])
