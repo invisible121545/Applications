@@ -60,3 +60,6 @@ def signpage(request):
 
 def loginpage(request):
 	return render(request,'signin.html',{'title':'Sign Page'})
+
+def order(request):
+	return render(request,'order.html',{'title':'order Page'})
