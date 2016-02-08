@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block layout %}
+	<div class="header_wrap">
+		<div class="header">
+			<span class="i_head icon_back i_head_1"></span>
+			<h3 class="i_head_title">Sign</h3>
+		</div>			
+	</div>
+	
+	<div class="main">
+		<div class="segment_box point_seg">
+			<div class="segment">
+				<a href="" class="segment_item active">Sign In</a>
+				<a href="" class="segment_item">Sign Up</a>
+			</div>					
+			<span class="seg_index"></span>
+		</div>
+		<div class="cou_content">
+			<div class="seg_page seg_page0 show">
+				    <form class="login_form" action="{% url "Yoins:checkSign" %}" method="post">
+			    	{% csrf_token %}
+			    	<input type="text" name="username" class="form_input" placeholder="Username" value="xuzhh" />
+			    	<input type="text" name="admin_pass" class="form_input" placeholder="password" value="121545" />			    	
+			    	<input type="submit" value="Sign Up" />
+			    	{% if message %}
+			    	    <small class="msg">{{message}}</small>
+			    	{% endif %}
+			    </form>
+			</div>
+		</div>
+	</div>
+    
+{% endblock layout %}

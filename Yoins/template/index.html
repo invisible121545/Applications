@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block layout %}   
+	<div class="header_wrap">
+		<div class="header">
+			<a class="i_head icon_cate i_head_1"></a>
+			<a class="i_head icon_person i_head_2"></a>
+			<a class="i_head i_head_logo"></a>
+			<a class="i_head icon_wish i_head_3"></a>
+			<a class="i_head icon_bag i_head_4"></a>
+		</div>
+	</div>
+	<div class="main">
+		<!-- <div class="swiper-container main_swiper">
+			<div class="swiper-wrapper clearfix">
+				
+			</div>
+		</div> -->
+		{% include 'lib/swipe.html' %}
+		{% include 'lib/index_cate.html' %}
+		<div class="collection_view index_pro">
+			<h3 class="nc_title">Recommend</h3>
+			{% if products %}
+		    <ul>
+		    	{% for pro in products %}
+	    		<li class="col_4">
+	    			<a href="/product/{{pro.products_id}}">
+	    				<span class="img_box">
+	    					<span class="img_in">
+	    						<img src="http://img2.newchic.com/thumb/wap/{{pro.products_image}}" alt="" class="img_responsive">
+	    					</span>
+	    				</span>
+	    				<strong class="price"> US${{pro.products_price}} <span class="icon icon_wish_gray"></span></strong>
+						<span class="dist">88% Off</span>							
+	    			</a>
+	    			<a href="{% url 'Yoins:product_list' %}"></a>
+	    		</li>
+		    	{% endfor %}
+		    </ul>
+			
+			{% endif %}
+		</div>
+	</div>    
+{% endblock layout %}
